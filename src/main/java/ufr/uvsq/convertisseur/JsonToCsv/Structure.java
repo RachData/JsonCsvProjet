@@ -10,18 +10,19 @@ public class Structure
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
-	public int getQuantie() {
+	public int getQuantite() {
 		return quantite;
 	}
-	public void setQuantie(int quantite) {
+	public void setQuantite(int quantite) {
 		this.quantite = quantite;
 	}
-	public double getPrix() {
+	public double getPrix_unitaire() {
 		return prix_unitaire;
 	}
-	public void setPrix(double prix) {
-		this.prix_unitaire = prix;
+	public void setPrix_unitaire(double prix_unitaire) {
+		this.prix_unitaire = prix_unitaire;
 	}
+	
 	
 
     

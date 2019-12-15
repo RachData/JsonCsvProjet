@@ -51,11 +51,16 @@ public class Main {
 			    		sc =new Scanner(System.in);		
 			    		String chemin=sc.nextLine();	
 			    		Convertisseur converter =new Convertisseur();	    		
-			    		converter.to_json(chemin);
-			    		System.out.println("Operation terminer");
+			    		try {
+							converter.to_json(chemin);
+							System.out.println("Operation terminer");
+				    		test= Show.suite();
+						} catch (Exception e) {
+							
+						}
 			    		
-			    		test= Show.suite();
 	        	}
+	        	break;
 	        case 3:
         	{	   
 		    	    System.out.println("Entrez le chemin absolu du fichier JSON");			    		
@@ -69,9 +74,12 @@ public class Main {
         	}
 	            break;
 	        case 4:
-	        	
+	        {
+	        	System.out.println("◙◙◙ ◙◙◙ ◙◙◙ ◙◙◙ ");
+	    		System.out.println("    Aurevoir   \n");
+	    		System.out.println("◙◙◙ ◙◙◙ ◙◙◙ ◙◙◙ ");
 	            System.exit(0);
-	       
+	        }
 	        /*default:
 			        	System.out.println("Votre choix ne se trouve pas dans le menu/n! ");
 			        	

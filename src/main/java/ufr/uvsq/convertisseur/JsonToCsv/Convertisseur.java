@@ -58,30 +58,36 @@ public class Convertisseur
 			
 	}
 	
-	public void to_json(String chemin)
+	public void to_json(String chemin) throws CheminsExceptions,FichiersVide
 	{
-		
-		try 
-		{
-			CsvSchema monSchema_Csv = CsvSchema.emptySchema().withHeader();
-			CsvMapper csvMapper = new CsvMapper();
+		//Verification de l'existance du fichier
+		  File Fichier=new File(chemin);
+		  if(Fichier.exists()==false){
+			  throw new CheminsExceptions();
+		  //if(true){
+		  }else{
+			  
+			  if(Fichier.length()==0){
+				  throw new FichiersVide();
+			  }else{
+				  try {
+			  			CsvSchema monSchema_Csv = CsvSchema.emptySchema().withHeader();
+			  			CsvMapper csvMapper = new CsvMapper();
 
-			MappingIterator<Structure> Structure= csvMapper.readerFor(Structure.class)
-			  .with(monSchema_Csv)
-			  .readValues(new File(chemin));
-			
-			
-			new ObjectMapper()
-			  .configure(SerializationFeature.INDENT_OUTPUT, true)
-
-
-			  .writeValue(new File("C:/Users/ACER E1/Documents/java/Convert_Json_Csv/jsonProject/src/main/ressources/Csv_to_Json"), Structure.readAll());
-
-		}
-		 catch (Exception e)
-		{
-			 e.printStackTrace();
-		};
+			  			MappingIterator<Structure> Structure= csvMapper.readerFor(Structure.class)
+			  					.with(monSchema_Csv)
+			  					.readValues(new File(chemin));
+			  			new ObjectMapper()
+			  			.configure(SerializationFeature.INDENT_OUTPUT, true)
+			  			.writeValue(new File("C:/Users/ACER E1/Documents/java/JsonToCsv/src/main/ressources/Csv_to_Json/jsonFromCsv.json2"), Structure.readAll());
+			  		}
+			  		catch (Exception e)
+			  		{
+			  			e.printStackTrace();
+			  		};
+			  }
+		  }
 	}
 
-}
+}			  			
+

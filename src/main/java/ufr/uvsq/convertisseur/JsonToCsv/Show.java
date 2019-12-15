@@ -37,10 +37,12 @@ public class Show
 
 		selection = input.nextInt();
 		if(selection==0)
-		//throw new MonException();
-		System.out.println("◙◙◙ ◙◙◙ ◙◙◙ ◙◙◙ ");
-		System.out.println("    Aurevoir   \n");
-		System.out.println("◙◙◙ ◙◙◙ ◙◙◙ ◙◙◙ ");
+		{//throw new MonException();
+			System.out.println("◙◙◙ ◙◙◙ ◙◙◙ ◙◙◙ ");
+			System.out.println("    Aurevoir   \n");
+			System.out.println("◙◙◙ ◙◙◙ ◙◙◙ ◙◙◙ ");
+			System.exit(-1);
+		}
 		return selection;
 	}
 
