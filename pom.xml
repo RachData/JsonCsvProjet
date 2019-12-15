@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>ufr.uvsq.convertisseur</groupId>
-  <artifactId>JsonToCsv</artifactId>
+  <artifactId>json2csv</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>JsonToCsv</name>
+  <name>json2csv</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -15,11 +15,105 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
+  <!--  -->
+  <dependency>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>3.0.4</version>
     </dependency>
-  </dependencies>
+  
+   <!--  -->
+	  <dependency>
+	    <groupId>com.fasterxml.jackson.dataformat</groupId>
+	    <artifactId>jackson-dataformat-csv</artifactId>
+	    <version>2.10.1</version>
+	</dependency>
+	  
+	   <!--  -->
+	  <dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-databind</artifactId>
+	    <version>2.10.1</version>
+	</dependency>
+	 <!--  -->
+  <dependency>
+        <groupId>org.apache.maven.doxia</groupId>
+        <artifactId>doxia-site-renderer</artifactId>
+        <version>1.8.1</version>
+    </dependency>
+	   <!--  -->
+		    <dependency>
+		      <groupId>junit</groupId>
+		      <artifactId>junit</artifactId>
+		      <version>4.12</version>
+		      <scope>test</scope>
+		    </dependency>
+		  </dependencies>
+
+  <reporting>
+  
+   <!--  -->
+   <plugins>
+       <!--  -->
+  	 		<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.7</version>
+            </plugin>
+ <!--  -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>2.9</version>
+		  </plugin>   
+
+        <!-- jar avec dependance    -->
+
+     <plugin>
+     
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+           <archive>
+            <manifest>
+              <mainClass>ufr.uvsq.convertisseur.json2csv.Main</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+       
+     </plugin>
+   
+    <plugin>
+      <!-- Build an executable JAR -->
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>3.1.0</version>
+      <configuration>
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <classpathPrefix>lib/</classpathPrefix>
+            <mainClass>ufr.uvsq.convertisseur.json2csv.Main</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+    </plugin>
+     <!--  -->
+     <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>findbugs-maven-plugin</artifactId>
+              <version>3.0.4</version> <!--have modified this -->
+              <configuration>
+                  <xmlOutput>true</xmlOutput>
+                  <!-- Optional directory to put findbugs xdoc xml report -->
+                  <xmlOutputDirectory>target/site</xmlOutputDirectory>
+              </configuration>
+         </plugin>
+ 
+      </plugins>
+    </reporting>
+
 </project>
