@@ -1,9 +1,0 @@
-[ {
-  "libelle" : "Sac a dos",
-  "quantite" : 12,
-  "prix_unitaire" : 15.23
-}, {
-  "libelle" : "boite a crayon",
-  "quantite" : 4,
-  "prix_unitaire" : 5.25
-} ]
