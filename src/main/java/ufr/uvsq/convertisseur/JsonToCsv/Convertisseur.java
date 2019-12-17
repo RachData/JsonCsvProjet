@@ -29,6 +29,7 @@ public class Convertisseur
 
 {
 	
+
 	/**
 	 * Cette methode permet de passer d'un fichier json à un fichier csv
 	 * 
@@ -39,7 +40,9 @@ public class Convertisseur
 	 * @throws FichiersVide : Il resout l'exception qui survient si le fichier est vide
 	 */
 	
-	  public void to_csv (String chemin) throws CheminsExceptions,FichiersVide
+
+	  public void to_csv (String chemin) throws CheminsExceptions,FichiersVide, JsonGenerationException, JsonMappingException, IOException
+
 
 	{
 		  //Verification de l'existance du fichier
@@ -76,13 +79,13 @@ public class Convertisseur
 					
 						csvMapper.writerFor(JsonNode.class)
 							  .with(csvSchema)
-							  .writeValue(new File("C:/Users/ACER E1/Documents/java/JsonToCsv/src/main/ressources/Json_to_Csv/csvFrom_Json.csv"), jsonTree);
+							  .writeValue(new File("C:\\Users\\utilisateur\\Documents\\Java\\convertisseur\\JsonCsvProjet\\src\\main\\Ressources\\Json_to_Csv\\Json_to_csv.csv"), jsonTree);
 						
-					}
-				  catch (Exception e)
-				  
+
+					} catch (com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException e)
+
 					{
-						e.printStackTrace();
+						System.out.println("Format du fichier json incorrect");
 					}
 			  }  
 		  }
@@ -127,7 +130,7 @@ public class Convertisseur
 			  					.readValues(new File(chemin));
 			  			new ObjectMapper()
 			  			.configure(SerializationFeature.INDENT_OUTPUT, true)
-			  			.writeValue(new File("C:/Users/ACER E1/Documents/java/JsonToCsv/src/main/ressources/Csv_to_Json/jsonFromCsv.json2"), Structure.readAll());
+			  			.writeValue(new File("C:\\Users\\utilisateur\\Documents\\Java\\convertisseur\\JsonCsvProjet\\src\\main\\Ressources\\Json_to_Csv\\jsonFromCsv.json"), Structure.readAll());
 			  		}
 				  
 			  		catch (Exception e)
