@@ -4,8 +4,22 @@ import java.util.Scanner;
 
 import ufr.uvsq.convertisseur.Exceptions.SaisiesExceptions;
 
+/**
+ *  
+ * classe qui gere l'affichage 
+ * @author MAIGA
+ *
+ */
 public class Show 
 {
+	
+	/**La fonction qui gere le menu de la fonction d'affichage
+	 * 
+	 * @return : retourne le numero correspondant au choix de l'utilisateur
+	 * @throws SaisiesExceptions : gere les excpetions liées aux saises d'exception
+	 * 
+	 */
+	
 	public static int menu ()throws SaisiesExceptions
 	{
 		  

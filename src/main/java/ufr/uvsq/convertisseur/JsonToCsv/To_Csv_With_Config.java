@@ -9,13 +9,26 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 
+/**
+ * cette classe s'occupe de la gestion des transformations lorsqu'il ya un fichier de configuration a utilisé
+ * @author MAIGA
+ *
+ */
 public class To_Csv_With_Config 
 {
-	
+	/**
+	 * 
+	 * @param chemin : il represente le chemin absolu du fichier json a convertir
+	 * @throws IOException :il represente les exceptions liés au fichier
+	 * @throws JsonMappingException : il represente les exceptions liées Mappage de json
+	 *
+	 */
 	public void config(String chemin) throws IOException, JsonMappingException, IOException
 	{
 	//fonction de configuration qui prend en compte le chemin du fichier json
+		
 	CsvMapper csvMapper = new CsvMapper();
+	
 	CsvSchema csvSchema = csvMapper
 	  .schemaFor(Properties_Config.class)
 	  .withHeader();

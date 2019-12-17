@@ -4,7 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-
+/**
+ * classe abstraite indiquant les modifations si il ya configuratuion 
+ * @author MAIGA
+ *
+ */
 @JsonPropertyOrder({
     "libelle",
     "Prix_total"

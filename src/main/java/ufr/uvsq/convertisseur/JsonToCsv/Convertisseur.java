@@ -1,6 +1,7 @@
 package ufr.uvsq.convertisseur.JsonToCsv;
 
 import java.io.File;
+
 import java.io.IOException;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
@@ -15,39 +16,78 @@ import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 
 import ufr.uvsq.convertisseur.Exceptions.*;
 
+/**
+ * Classe convertisseur implementant les methodes de converstions
+ * 
+ * 
+ * @author MAIGA
+ * 
+ *
+ */
+ 
 public class Convertisseur
 
 {
 	
+<<<<<<< HEAD
 	  public void to_csv (String chemin) throws CheminsExceptions,FichiersVide//, JsonGenerationException, JsonMappingException, IOException
+=======
+
+	/**
+	 * Cette methode permet de passer d'un fichier json à un fichier csv
+	 * 
+	 * @param chemin : il represente le chemin absolu du fichier json a convertir
+	 * 
+	 * @throws CheminsExceptions : Il resout l'exception qui survient si le chemin renseigne est invalide
+	 * 
+	 * @throws FichiersVide : Il resout l'exception qui survient si le fichier est vide
+	 */
+	
+
+	  public void to_csv (String chemin) throws CheminsExceptions,FichiersVide, JsonGenerationException, JsonMappingException, IOException
+>>>>>>> e13b2e3d9d604a10aef8b401dc4732e38468727c
+
 
 	{
 		  //Verification de l'existance du fichier
+		  
 		  File Fichier=new File(chemin);
-		  if(Fichier.exists()==false){
+		  
+		  if(Fichier.exists()==false)
+		  {
 			  throw new CheminsExceptions();
-		  //if(true){
-		  }else{
+		  //if(true)
+		  }
+		  else
+		  {
 			  
 			  if(Fichier.length()==0){
 				  throw new FichiersVide();
-			  }else{
-				  try {
+		  }
+			  else
+			  {
+				  try 
+				  {
 
 						JsonNode jsonTree = new ObjectMapper().readTree(Fichier);
+						
 						com.fasterxml.jackson.dataformat.csv.CsvSchema.Builder csvSchemaBuilder = CsvSchema.builder();
 						
 						JsonNode firstObject = jsonTree.elements().next();
 						
 						firstObject.fieldNames().forEachRemaining(fieldName -> {((com.fasterxml.jackson.dataformat.csv.CsvSchema.Builder) csvSchemaBuilder).addColumn(fieldName);} );
+						
 						CsvSchema csvSchema = ((CsvSchema) csvSchemaBuilder.build()).withHeader();
 						
 						CsvMapper csvMapper = new CsvMapper();
+					
 						csvMapper.writerFor(JsonNode.class)
 							  .with(csvSchema)
 							  .writeValue(new File("C:\\Users\\utilisateur\\Documents\\Java\\convertisseur\\JsonCsvProjet\\src\\main\\Ressources\\Json_to_Csv\\Json_to_csv.csv"), jsonTree);
 						
+
 					} catch (com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException e)
+
 					{
 						System.out.println("Format du fichier json incorrect");
 					} catch (JsonProcessingException e) {
@@ -55,27 +95,42 @@ public class Convertisseur
 					} catch (IOException e) {
 						System.out.println("");
 					}
-			  }
-			  
+			  }  
 		  }
-		
-			
 	}
+	  
+	  /**
+	   * Cette methode permet de passer d'un fichier csv à un fichier json
+	   * @param chemin : il represente le chemin absolu du fichier csv a convertir
+	   * @throws CheminsExceptions :Il resout l'exception qui survient si le chemin renseigne est invalide
+	   * @throws FichiersVide : Il resout l'exception qui survient si le fichier est vide
+	   */
 	
 	public void to_json(String chemin) throws CheminsExceptions,FichiersVide
 	{
 		//Verification de l'existance du fichier
 		  File Fichier=new File(chemin);
-		  if(Fichier.exists()==false){
+		  
+		  if(Fichier.exists()==false)
+		  {
 			  throw new CheminsExceptions();
 		  //if(true){
-		  }else{
+		  }
+		  else
+		  {
 			  
-			  if(Fichier.length()==0){
+			  if(Fichier.length()==0)
+			  {
 				  throw new FichiersVide();
-			  }else{
-				  try {
+				  
+			  }
+			  else
+			  
+			  {
+				  try
+				  {
 			  			CsvSchema monSchema_Csv = CsvSchema.emptySchema().withHeader();
+			  			
 			  			CsvMapper csvMapper = new CsvMapper();
 
 			  			MappingIterator<Structure> Structure= csvMapper.readerFor(Structure.class)
@@ -85,7 +140,9 @@ public class Convertisseur
 			  			.configure(SerializationFeature.INDENT_OUTPUT, true)
 			  			.writeValue(new File("C:\\Users\\utilisateur\\Documents\\Java\\convertisseur\\JsonCsvProjet\\src\\main\\Ressources\\Csv_to_Json\\jsonFromCsv.json"), Structure.readAll());
 			  		}
+				  
 			  		catch (Exception e)
+				  
 			  		{
 			  			e.printStackTrace();
 			  		};
