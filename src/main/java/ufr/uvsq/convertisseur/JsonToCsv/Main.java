@@ -48,14 +48,11 @@ public class Main
 			    	    System.out.println("Entrez le chemin absolu du fichier JSON");	
 			    	    
 			    		sc =new Scanner(System.in);		
-<<<<<<< HEAD
-			    		String chemin=sc.nextLine();
-			    		System.out.println(chemin);
-=======
+
 			    		
 			    		String chemin=sc.nextLine();		
 			    		
->>>>>>> e13b2e3d9d604a10aef8b401dc4732e38468727c
+
 			    		Convertisseur converter =new Convertisseur();
 			    		try{
 			    			converter.to_csv(chemin);
@@ -72,17 +69,12 @@ public class Main
 			    	    System.out.println("Entrez le chemin absolu du fichier CSV");	
 			    	    
 			    		sc =new Scanner(System.in);		
-<<<<<<< HEAD
-			    		String chemin=sc.nextLine();
-			    		Convertisseur converter =new Convertisseur();	    		
-=======
-			    		
 			    		String chemin=sc.nextLine();
 			    		
 			    		//je creee une nouvelle instance de ma classe convertisseur
 			    		Convertisseur converter =new Convertisseur();	    
 			    		
->>>>>>> e13b2e3d9d604a10aef8b401dc4732e38468727c
+
 			    		try {
 							converter.to_json(chemin);
 							System.out.println("Operation terminer");
@@ -100,16 +92,12 @@ public class Main
 		    		sc =new Scanner(System.in);		
 		    		
 		    		String chemin=sc.nextLine();	
-<<<<<<< HEAD
-		    		To_Csv_With_Config converter =new To_Csv_With_Config();	    		
-		    		//converter.config(chemin);
-=======
 		    		
 		    		To_Csv_With_Config converter =new To_Csv_With_Config();	    
 		    		
-		    		converter.config(chemin);
+		    		//converter.config(chemin);
 		    		
->>>>>>> e13b2e3d9d604a10aef8b401dc4732e38468727c
+
 		    		System.out.println("Operation terminer");
 		    		
 		    		test= Show.suite();

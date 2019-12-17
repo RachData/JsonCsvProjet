@@ -29,9 +29,6 @@ public class Convertisseur
 
 {
 	
-<<<<<<< HEAD
-	  public void to_csv (String chemin) throws CheminsExceptions,FichiersVide//, JsonGenerationException, JsonMappingException, IOException
-=======
 
 	/**
 	 * Cette methode permet de passer d'un fichier json à un fichier csv
@@ -45,7 +42,7 @@ public class Convertisseur
 	
 
 	  public void to_csv (String chemin) throws CheminsExceptions,FichiersVide, JsonGenerationException, JsonMappingException, IOException
->>>>>>> e13b2e3d9d604a10aef8b401dc4732e38468727c
+
 
 
 	{
