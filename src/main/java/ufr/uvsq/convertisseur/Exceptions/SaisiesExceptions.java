@@ -1,10 +1,10 @@
 package ufr.uvsq.convertisseur.Exceptions;
 
-public class SaisiesExceptions extends Exception {
+public class SaisiesExceptions extends Exception 
+{
 	
-	public SaisiesExceptions(){
-		System.out.println("Erreur de saisie test de surerter...");
-		
+	public SaisiesExceptions()
+	{
+		System.out.println("Erreur de saisie test de surerter...");	
 	}
-
 }
