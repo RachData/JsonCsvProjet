@@ -79,7 +79,7 @@
           </descriptorRefs>
            <archive>
             <manifest>
-              <mainClass>ufr.uvsq.convertisseur.json2csv.Main</mainClass>
+              <mainClass>ufr.uvsq.convertisseur.json2csv.Main.java</mainClass>
             </manifest>
           </archive>
         </configuration>

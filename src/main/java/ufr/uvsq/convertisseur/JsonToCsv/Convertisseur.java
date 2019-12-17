@@ -19,7 +19,7 @@ public class Convertisseur
 
 {
 	
-	  public void to_csv (String chemin) throws CheminsExceptions,FichiersVide, JsonGenerationException, JsonMappingException, IOException
+	  public void to_csv (String chemin) throws CheminsExceptions,FichiersVide//, JsonGenerationException, JsonMappingException, IOException
 
 	{
 		  //Verification de l'existance du fichier
@@ -50,6 +50,10 @@ public class Convertisseur
 					} catch (com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException e)
 					{
 						System.out.println("Format du fichier json incorrect");
+					} catch (JsonProcessingException e) {
+						System.out.println("");
+					} catch (IOException e) {
+						System.out.println("");
 					}
 			  }
 			  
@@ -79,7 +83,7 @@ public class Convertisseur
 			  					.readValues(new File(chemin));
 			  			new ObjectMapper()
 			  			.configure(SerializationFeature.INDENT_OUTPUT, true)
-			  			.writeValue(new File("C:\\Users\\utilisateur\\Documents\\Java\\convertisseur\\JsonCsvProjet\\src\\main\\Ressources\\Json_to_Csv\\jsonFromCsv.json"), Structure.readAll());
+			  			.writeValue(new File("C:\\Users\\utilisateur\\Documents\\Java\\convertisseur\\JsonCsvProjet\\src\\main\\Ressources\\Csv_to_Json\\jsonFromCsv.json"), Structure.readAll());
 			  		}
 			  		catch (Exception e)
 			  		{
