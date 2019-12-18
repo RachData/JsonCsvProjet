@@ -39,8 +39,9 @@ Les étapes pour executer votre programme....
 Entrez les programmes/logiciels/ressources que vous avez utilisé pour développer votre projet
 
 _exemples :_
-* [Materialize.css](http://materializecss.com) - Framework CSS (front-end)
-* [Atom](https://atom.io/) - Editeur de textes
+* API JACKSON https://github.com/FasterXML/jackson-dataformats-text/tree/master/csv
+ https://www.baeldung.com/java-converting-json-to-csv
+* PLUGIN ET DEPENDENCES 
 
 ## Contributing
 
