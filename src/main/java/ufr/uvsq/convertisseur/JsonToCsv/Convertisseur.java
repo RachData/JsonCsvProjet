@@ -98,6 +98,7 @@ public class Convertisseur
 	  
 	  
 	  
+	  
 	  /**
 	   * Cette methode permet de passer d'un fichier csv à un fichier json
 	   * @param chemin : il represente le chemin absolu du fichier csv a convertir
@@ -108,7 +109,8 @@ public class Convertisseur
 	public void to_json(String chemin) throws CheminsExceptions,FichiersVide
 	{
 		//Verification de l'existance du fichier
-		  File Fichier=new File(chemin);
+		 
+		File Fichier=new File(chemin);
 		  
 		  if(Fichier.exists()==false)
 		  {
@@ -136,6 +138,7 @@ public class Convertisseur
 			  					.with(monSchema_Csv)
 			  					.readValues(new File(chemin));
 			  			new ObjectMapper()
+
 			  				.configure(SerializationFeature.INDENT_OUTPUT, true)
 			  				.writeValue(new File("src\\main\\Ressources\\Csv_to_Json\\jsonFromCsv.json"), Structure.readAll());
 			  		}
