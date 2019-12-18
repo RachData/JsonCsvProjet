@@ -41,11 +41,11 @@ Les étapes pour executer votre programme....
  https://www.baeldung.com/java-converting-json-to-csv
 * PLUGIN ET DEPENDENCES (Voir https://maven.apache.org/plugins/maven-jar-plugin/)
 
-## Contributing
+## Contributeurs
 
 Si vous souhaitez contribuer ou ameliorer le projet vous pouvez nous envoyer un mail 
 - abdullahwin99@gmail.com
-- archidderra@gmail.com
+- rachidderra@gmail.com
 
 ## Versions
 
