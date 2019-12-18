@@ -32,226 +32,136 @@
 
       <javadoc.opts>-Xdoclint:none</javadoc.opts>
   
-  </properties>
+</properties>
 
-  <dependencies>
-  
-  <!-- Gestion des dependances -->
-  <dependency>
-  <!-- Insertion de la dependance findbug -->
-  
-        <groupId>org.codehaus.mojo</groupId>
-        
-        <artifactId>findbugs-maven-plugin</artifactId>
-        
-        <version>3.0.4</version>
-        
-  </dependency>
-  
-  <!-- Insertion de la dependance hamcrest -->
-  <dependency>
-  
-    <groupId>org.hamcrest</groupId>
-    
-    <artifactId>hamcrest-all</artifactId>
-    
-    <version>1.3</version>
-    
-    <scope>test</scope>
-    
-</dependency>
-  
-  <!-- Insertion de la dependance javadoc -->
-	<dependency>
-	  
-	  <groupId>org.apache.maven.plugins</groupId>
-	  
-	  <artifactId>maven-javadoc-plugin</artifactId>
-	  
-	  <version>3.1.1</version>
-	  
-	  <type>maven-plugin</type>
-	  
-	</dependency>
-	  
-   <!-- Insertion de la la dependance JACKSON-->
-	  <dependency>
-	  
-	    <groupId>com.fasterxml.jackson.dataformat</groupId>
-	    
-	    <artifactId>jackson-dataformat-csv</artifactId>
-	    
-	    <version>2.10.1</version>
-	    
-	</dependency>
-	  
-	   <!-- insertion de la dependance JAKSON CORE -->
-	  <dependency>
-	  
-	    <groupId>com.fasterxml.jackson.core</groupId>
-	    
-	    <artifactId>jackson-databind</artifactId>
-	    
-	    <version>2.10.1</version>
-	    
-	</dependency>
-	
-	 <!-- Insertion de la dependence doxia-site-render -->
-	 
-  <dependency>
-  
-        <groupId>org.apache.maven.doxia</groupId>
-        
-        <artifactId>doxia-site-renderer</artifactId>
-        
-        <version>1.8.1</version>
-        
-    </dependency>
-    
-	   <!-- Insertion Junit pour les test -->
-	   
-		    <dependency>
-		    
-		      <groupId>junit</groupId>
-		      
-		      <artifactId>junit</artifactId>
-		      
-		      <version>4.12</version>
-		      
-		      <scope>test</scope>
-		      
-		    </dependency>
-		    
-</dependencies>
 
-  <reporting>
-  
-   <!-- Liste des plugins inseres -->
-   <plugins>
-       <!-- Integration de maven -->
-  	 		<plugin>
-  	 		
-                <groupId>org.apache.maven.plugins</groupId>
-                
-                <artifactId>maven-site-plugin</artifactId>
-                
-                <version>3.7</version>
-                
-            </plugin>
-            
- 			<!-- Insertion du plugin maven qui donne les info des rapports sur le projet  -->
- 			
-            <plugin>
-            
-                <groupId>org.apache.maven.plugins</groupId>
-                
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                
-                <version>2.9</version>
-                
-		  </plugin>   
-
-        <!-- jar avec dependance    -->
-
-     <plugin>
-     
-        <artifactId>maven-assembly-plugin</artifactId>
-        
-        <version>3.2.0</version>
-        
-        <configuration>
-        
-          <descriptorRefs>
-          
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-            
-          </descriptorRefs>
-          
-           <archive>
-           
-            <manifest>
-
-              <mainClass>ufr.uvsq.convertisseur.json2csv.Main.java</mainClass>
-
-            </manifest>
-            
-          </archive>
-          
-        </configuration>
-       
-     </plugin>
+	<dependencies>
+   		<dependency>
+     		<groupId>junit</groupId>
+     		<artifactId>junit</artifactId>
+     		<version>3.8.1</version>
+     		<scope>test</scope>
+   		</dependency>
    
-    <plugin>
-      <!-- Build an executable JAR -->
-      
-      <groupId>org.apache.maven.plugins</groupId>
-      
-      <artifactId>maven-jar-plugin</artifactId>
-      
-      <version>3.1.0</version>
-      
-      <configuration>
-      
-        <archive>
-        
-          <manifest>
-          
-            <addClasspath>true</addClasspath>
-            
-            <classpathPrefix>lib/</classpathPrefix>
-            
-            <mainClass>ufr.uvsq.convertisseur.json2csv.Main</mainClass>
-            
-          </manifest>
-          
-        </archive>
-        
-      </configuration>
-      
-    </plugin>
-    
-     <!--  Plugin de javadoc-->
-     
-       <plugin>
-       
-        <groupId>org.apache.maven.plugins</groupId>
-        
-        <artifactId>maven-javadoc-plugin</artifactId>
-        
-        <version>3.1.1</version>
-        
-        <configuration>
-          
-          <show>public</show>
-          
-         <failOnError>false</failOnError>
-          
-        </configuration>
-        
-      </plugin>
-    
-     <!--  Plugin de gestion de rapport d'erreur findbugs-->
-     <plugin>
-              <groupId>org.codehaus.mojo</groupId>
-              
-              <artifactId>findbugs-maven-plugin</artifactId>
-              
-              <version>3.0.4</version> <!--have modified this -->
-              
-              <configuration>
-              
-                  <xmlOutput>true</xmlOutput>
-                  
-                  <!-- Optional directory to put findbugs xdoc xml report -->
-                  
-                  <xmlOutputDirectory>target/site</xmlOutputDirectory>
-                  
-              </configuration>
-              
-         </plugin>
+   <!--Ajout des dépendances de la bibliothèque Jackson  -->
+    	<dependency>
+    		<groupId>com.fasterxml.jackson.dataformat</groupId>
+    		<artifactId>jackson-dataformat-csv</artifactId>
+      		<version>2.10.1</version>
+		</dependency>
+
+  		<dependency>
+    		<groupId>com.fasterxml.jackson.core</groupId>
+    		<artifactId>jackson-databind</artifactId>
+    		<version>2.10.1</version>
+		</dependency>
+
+<!-- Utilisons findBugs qui permet de rechercher des bugs dans les programmes Java. Il est basé sur le concept de modèles de bugs -->
+<!-- https://mvnrepository.com/artifact/org.codehaus.mojo/findbugs-maven-plugin -->
+		<dependency>
+   			<groupId>org.codehaus.mojo</groupId>
+   			<artifactId>findbugs-maven-plugin</artifactId>
+   			<version>3.0.4</version>
+		</dependency>
+
+<!-- Utilisons Doxia qui est un cadre de génération de contenu fournissant des techniques puissantes pour générer du contenu statique et dynamique -->
+		<dependency>
+     		<groupId>org.apache.maven.doxia</groupId>
+     		<artifactId>doxia</artifactId>
+     		<version>1.9</version>
+     		<type>pom</type>
+   		</dependency>
+	</dependencies>
  
-      </plugins>
-      
-    </reporting>
+ 
+ 	<build>
+ 		<plugins>
+       	
+ 			<plugin>
+        		<groupId>org.apache.maven.plugins</groupId>
+            	<artifactId>maven-site-plugin</artifactId>
+            	<version>3.7</version>
+        	</plugin>
+
+        	<plugin>
+        		<groupId>org.apache.maven.plugins</groupId>
+            	<artifactId>maven-project-info-reports-plugin</artifactId>
+            	<version>2.9</version>
+ 			</plugin>  
+
+        <!-- Generer jar avec dependance    -->
+
+     		<plugin>
+     
+        		<artifactId>maven-assembly-plugin</artifactId>
+        		<version>3.2.0</version>
+        		<configuration>
+          			<descriptorRefs>
+            			<descriptorRef>jar-with-dependencies</descriptorRef>
+          			</descriptorRefs>
+           			<archive>
+            			<manifest>
+              				<mainClass>fr.uvsq.Convertisseur.Convertjasoncsv.MainParse</mainClass>
+            			</manifest>
+          			</archive>
+        		</configuration>
+       
+     		</plugin>
+   
+    		<plugin>
+   
+      <!-- Generer le jar excecutable  -->
+	        	<groupId>org.apache.maven.plugins</groupId>
+    	  		<artifactId>maven-jar-plugin</artifactId>
+        		<version>3.1.0</version>
+        		<configuration>
+        			<archive>
+          				<manifest>
+                			<addClasspath>true</addClasspath>
+            				<classpathPrefix>lib/</classpathPrefix>
+            				<mainClass>ufr.uvsq.convertisseur.JsonToCsv.Main</mainClass>
+	          			</manifest>
+    	    		</archive>
+      			</configuration>
+	    	</plugin>
+     
+    	 	<plugin>
+        		<groupId>org.codehaus.mojo</groupId>
+            	<artifactId>findbugs-maven-plugin</artifactId>
+	            <version>3.0.4</version> <!--have modified this -->
+    	        <configuration>
+        	    	<xmlOutput>true</xmlOutput>
+            	      <!-- Optional directory to put findbugs xdoc xml report -->
+                	<xmlOutputDirectory>target/site</xmlOutputDirectory>
+	             </configuration>
+    	     </plugin>
+        	 
+	         <plugin>
+    	  			<artifactId>maven-assembly-plugin</artifactId>
+      				<version>2.2</version>
+      				<configuration>
+        				<archive>
+          					<manifest>
+            					<mainClass>ufr.uvsq.convertisseur.JsonToCsv.Main</mainClass>
+          					</manifest>
+        				</archive>
+	        			<descriptorRefs>
+    	      				<descriptorRef>jar-with-dependencies</descriptorRef>
+        				</descriptorRefs>
+      				</configuration>
+      				<executions>
+        				<execution>
+          					<id>make-assembly</id>
+	          				<phase>package</phase> <!-- packaging phase -->
+    	      				<goals>
+        	    				<goal>single</goal>
+          					</goals>
+        				</execution>
+	      			</executions>
+    		</plugin>
+ 	
+		</plugins>
+ 
+	</build> 
 
 </project>
