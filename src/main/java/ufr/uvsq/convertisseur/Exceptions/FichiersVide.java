@@ -9,7 +9,7 @@ public class FichiersVide extends Exception
 	public FichiersVide()
 	
 	{
-		System.out.println("Votre fichier Json est vide ...");
+		System.out.println("Votre fichier est vide ...");
 	}
 
 }

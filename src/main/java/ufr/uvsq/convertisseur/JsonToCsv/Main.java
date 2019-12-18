@@ -27,6 +27,8 @@ public class Main
 	public static void main(String[] args) throws SaisiesExceptions,CheminsExceptions
 	{
 		int test=1;
+		
+		System.out.println(System.getProperty("user.dir"));
 	
 		do
 	{

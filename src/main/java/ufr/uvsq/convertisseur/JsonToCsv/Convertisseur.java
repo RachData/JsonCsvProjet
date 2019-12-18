@@ -41,7 +41,7 @@ public class Convertisseur
 	 */
 	
 
-	  public void to_csv (String chemin) throws CheminsExceptions,FichiersVide, JsonGenerationException, JsonMappingException, IOException
+	  public void to_csv (String chemin) throws CheminsExceptions,FichiersVide//, JsonGenerationException, JsonMappingException, IOException
 
 
 
@@ -80,7 +80,7 @@ public class Convertisseur
 					
 						csvMapper.writerFor(JsonNode.class)
 							  .with(csvSchema)
-							  .writeValue(new File("C:\\Users\\utilisateur\\Documents\\Java\\convertisseur\\JsonCsvProjet\\src\\main\\Ressources\\Json_to_Csv\\Json_to_csv.csv"), jsonTree);
+							  .writeValue(new File("src\\main\\Ressources\\Json_to_Csv\\Json_to_csv.csv"), jsonTree);
 						
 
 					} catch (com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException e)
@@ -95,6 +95,8 @@ public class Convertisseur
 			  }  
 		  }
 	}
+	  
+	  
 	  
 	  /**
 	   * Cette methode permet de passer d'un fichier csv à un fichier json
@@ -134,14 +136,14 @@ public class Convertisseur
 			  					.with(monSchema_Csv)
 			  					.readValues(new File(chemin));
 			  			new ObjectMapper()
-			  			.configure(SerializationFeature.INDENT_OUTPUT, true)
-			  			.writeValue(new File("C:\\Users\\utilisateur\\Documents\\Java\\convertisseur\\JsonCsvProjet\\src\\main\\Ressources\\Csv_to_Json\\jsonFromCsv.json"), Structure.readAll());
+			  				.configure(SerializationFeature.INDENT_OUTPUT, true)
+			  				.writeValue(new File("src\\main\\Ressources\\Csv_to_Json\\jsonFromCsv.json"), Structure.readAll());
 			  		}
 				  
 			  		catch (Exception e)
 				  
 			  		{
-			  			e.printStackTrace();
+			  			
 			  		};
 			  }
 		  }

@@ -1,3 +1,15 @@
+/*package ufr.uvsq.convertisseur.JsonToCsv;
+
+import junit.framework.TestCase;
+
+public class ConvertisseurTest extends TestCase {
+
+}
+
+
+*/
+
+
 package ufr.uvsq.convertisseur.JsonToCsv;
 
 import static org.junit.Assert.*;
@@ -44,6 +56,7 @@ public class ConvertisseurTest {
 	public void erreurSyntaxetestTOCSV() throws CheminsExceptions, FichiersVide {
 		 try {
 				 convertir.to_csv(chemin1CSV);
+				 
 			 }catch(Exception es) {
 				 
 			 }

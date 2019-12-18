@@ -19,7 +19,6 @@
   <properties>
   
   <!-- Encodage UTF-8  -->
-  
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     
     <!-- Projet compile avec java dans sa version 1.8-->
@@ -28,9 +27,7 @@
     
     <maven.compiler.target>1.8</maven.compiler.target>
     
- 
-
-      <javadoc.opts>-Xdoclint:none</javadoc.opts>
+ 	<javadoc.opts>-Xdoclint:none</javadoc.opts>
   
 </properties>
 
@@ -39,7 +36,7 @@
    		<dependency>
      		<groupId>junit</groupId>
      		<artifactId>junit</artifactId>
-     		<version>3.8.1</version>
+     		<version>4.12</version>
      		<scope>test</scope>
    		</dependency>
    
