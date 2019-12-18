@@ -34,11 +34,9 @@ Les étapes pour executer votre programme....
 
 -Un menu au choix vous etes affiché pour vous permettre de choisir votre mode de conversion
 
-## Fabriqué avec
-
-Entrez les programmes/logiciels/ressources que vous avez utilisé pour développer votre projet
-
-_exemples :_
+## Fabriqué avec 
+* Language : java
+* Type de projet: Projet Maven
 * API JACKSON https://github.com/FasterXML/jackson-dataformats-text/tree/master/csv
  https://www.baeldung.com/java-converting-json-to-csv
 * PLUGIN ET DEPENDENCES 
