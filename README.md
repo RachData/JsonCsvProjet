@@ -8,7 +8,7 @@
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)  [![forthebadge](https://forthebadge.com/images/badges/oooo-kill-em.svg)](https://forthebadge.com)
 
  JsonCsvProject est un projet Open Source qui a pour but de convertir un fichier JSON donné en entré vers un fichier CSV
- il permet également de convertir un fichier CSV vers un fichier JSON.
+ il permet également de convertir un fichier CSV vers un fichier JSON. Il utilise un fichier de configuration (Mesconfig.properties) qui  permettra à l'utilisateur de parametrer son choix aux niveaux des champs à afficher.
 
 
 ## Pour commencer
@@ -39,7 +39,7 @@ Les étapes pour executer votre programme....
 * Type de projet: Projet Maven
 * API JACKSON https://github.com/FasterXML/jackson-dataformats-text/tree/master/csv
  https://www.baeldung.com/java-converting-json-to-csv
-* PLUGIN ET DEPENDENCES 
+* PLUGIN ET DEPENDENCES (Voir https://maven.apache.org/plugins/maven-jar-plugin/)
 
 ## Contributing
 
