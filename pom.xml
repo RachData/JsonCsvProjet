@@ -123,9 +123,9 @@
 		    </dependency>
 		    
 </dependencies>
-
-  <reporting>
+ <build>
   
+ 
    <!-- Liste des plugins inseres -->
    <plugins>
        <!-- Integration de maven -->
@@ -251,7 +251,6 @@
          </plugin>
  
       </plugins>
-      
-    </reporting>
-
+     
+</build>
 </project>

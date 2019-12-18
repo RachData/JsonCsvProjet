@@ -80,7 +80,7 @@ public class Convertisseur
 					
 						csvMapper.writerFor(JsonNode.class)
 							  .with(csvSchema)
-							  .writeValue(new File("C:\\Users\\utilisateur\\Documents\\Java\\convertisseur\\JsonCsvProjet\\src\\main\\Ressources\\Json_to_Csv\\Json_to_csv.csv"), jsonTree);
+							  .writeValue(new File("src\\main\\Ressources\\Json_to_Csv\\Json_to_csv.csv"), jsonTree);
 						
 
 					} catch (com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException e)
@@ -106,7 +106,8 @@ public class Convertisseur
 	public void to_json(String chemin) throws CheminsExceptions,FichiersVide
 	{
 		//Verification de l'existance du fichier
-		  File Fichier=new File(chemin);
+		/*  
+		File Fichier=new File(chemin);
 		  
 		  if(Fichier.exists()==false)
 		  {
@@ -123,7 +124,7 @@ public class Convertisseur
 			  }
 			  else
 			  
-			  {
+			  {*/
 				  try
 				  {
 			  			CsvSchema monSchema_Csv = CsvSchema.emptySchema().withHeader();
@@ -135,7 +136,7 @@ public class Convertisseur
 			  					.readValues(new File(chemin));
 			  			new ObjectMapper()
 			  			.configure(SerializationFeature.INDENT_OUTPUT, true)
-			  			.writeValue(new File("C:\\Users\\utilisateur\\Documents\\Java\\convertisseur\\JsonCsvProjet\\src\\main\\Ressources\\Csv_to_Json\\jsonFromCsv.json"), Structure.readAll());
+			  			.writeValue(new File("src\\main\\Ressources\\Csv_to_Json\\jsonFromCsv.json"), Structure.readAll());
 			  		}
 				  
 			  		catch (Exception e)
@@ -144,8 +145,8 @@ public class Convertisseur
 			  			e.printStackTrace();
 			  		};
 			  }
-		  }
+		  //}
 	}
 
-}			  			
+//}			  			
 
