@@ -162,11 +162,7 @@
             	<version>3.7</version>
         	</plugin>
 
-        	<plugin>
-        		<groupId>org.apache.maven.plugins</groupId>
-            	<artifactId>maven-project-info-reports-plugin</artifactId>
-            	<version>2.9</version>
- 			</plugin>  
+        	
 
         <!-- Generer jar avec dependance    -->
 
@@ -214,6 +210,26 @@
                 	<xmlOutputDirectory>target/site</xmlOutputDirectory>
 	             </configuration>
     	     </plugin>
+    	     
+    	     
+    	     <plugin>
+		       
+		        <groupId>org.apache.maven.plugins</groupId>
+		        
+		        <artifactId>maven-javadoc-plugin</artifactId>
+		        
+		        <version>3.1.1</version>
+		        
+		        <configuration>
+		          
+		          <show>public</show>
+		          
+		         <failOnError>false</failOnError>
+		          
+		        </configuration>
+		        
+		      </plugin>
+    	     
         	 
 	         <plugin>
     	  			<artifactId>maven-assembly-plugin</artifactId>
