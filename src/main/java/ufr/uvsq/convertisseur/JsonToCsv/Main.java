@@ -57,12 +57,12 @@ public class Main
 			    	    Convertisseur converter =new Convertisseur();
 			    	
 			    	
-			    	    System.out.println(" votre fichier CSV convertit est dans le dossier F:/EclipseProjects/newProjet/JsonCsvProjet/src/main/Ressources/Json_to_Csv ");	
+			    	   // System.out.println(" votre fichier CSV convertit est dans le dossier F:/EclipseProjects/newProjet/JsonCsvProjet/src/main/Ressources/Json_to_Csv ");	
 			    	    	    		
 			    		try
 			    		{
 			    			converter.to_csv(chemin);
-			    			System.out.println("Operation terminée");
+			    			System.out.println("Operation terminer");
 			    			test= Show.suite();
 			    		}
 			    		catch(Exception e){
