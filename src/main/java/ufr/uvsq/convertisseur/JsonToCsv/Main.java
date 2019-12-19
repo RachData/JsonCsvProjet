@@ -24,9 +24,13 @@ public class Main
 	 * @throws IOException :Il resout l'exception qui survient pour la gestion des fichiers
 	 */
 
-	public static void main(String[] args) throws SaisiesExceptions,CheminsExceptions
+	public static void main(String[] args) throws SaisiesExceptions,CheminsExceptions, IOException
 	{
 		int test=1;
+		/*Convertisseur t=new Convertisseur();
+		t.csv_Path();
+		t.json_Path();
+		System.out.println("chemin csv  "+t.csv_Path()+"  chemin json  "+t.json_Path());*/
 	
 		do
 	{
@@ -45,16 +49,19 @@ public class Main
 		{
 	        case 1:
 			     {	   
-			    	    System.out.println("Entrez le chemin absolu du fichier JSON");	
+			    	 
+			    	 System.out.println("Entrez le chemin absolu du fichier JSON");	
 			    	    
 			    		sc =new Scanner(System.in);		
 
-			    		
-			    		String chemin=sc.nextLine();		
-			    		
-
-			    		Convertisseur converter =new Convertisseur();
-			    		try{
+			    		String chemin=sc.nextLine();
+			    	    Convertisseur converter =new Convertisseur();
+			    	
+			    	
+			    	    System.out.println(" votre fichier CSV convertit est dans le dossier F:/EclipseProjects/newProjet/JsonCsvProjet/src/main/Ressources/Json_to_Csv ");	
+			    	    	    		
+			    		try
+			    		{
 			    			converter.to_csv(chemin);
 			    			System.out.println("Operation terminée");
 			    			test= Show.suite();
@@ -66,15 +73,17 @@ public class Main
 	            break; 
 	        case 2:
 	        	{	   
-			    	    System.out.println("Entrez le chemin absolu du fichier CSV");	
-			    	    
-			    		sc =new Scanner(System.in);		
-			    		String chemin=sc.nextLine();
-			    		
-			    		//je creee une nouvelle instance de ma classe convertisseur
-			    		Convertisseur converter =new Convertisseur();	    
-			    		
-
+	        		
+	        	    System.out.println("Entrez le chemin absolu du fichier CSV");	
+		    	    
+		    		sc =new Scanner(System.in);		
+		    		
+		    		String chemin=sc.nextLine();
+	        		
+	        		  Convertisseur converter =new Convertisseur();	
+	        		   //chemin=converter.csv_Path();
+			    	   // System.out.println("Le Chemin de votre fichier CSV à convertir est : "+chemin);	
+			    	   
 			    		try {
 							converter.to_json(chemin);
 							System.out.println("Operation terminer");
@@ -85,7 +94,20 @@ public class Main
 			    		
 	        	}
 	        	break;
+	        	
 	        case 3:
+        	{	   
+        		Convertisseur converter=new Convertisseur();
+        		converter.openFile();     		
+		    		
+
+		    		//System.out.println("Operation terminer");
+		    		
+		    		//test= Show.suite();
+        	}
+	            break;
+	        	
+	        case 4:
         	{	   
 		    	    System.out.println("Entrez le chemin absolu du fichier JSON");		
 		    	    
@@ -96,14 +118,13 @@ public class Main
 		    		To_Csv_With_Config converter =new To_Csv_With_Config();	    
 		    		
 		    		//converter.config(chemin);
-		    		
 
 		    		System.out.println("Operation terminer");
 		    		
 		    		test= Show.suite();
         	}
 	            break;
-	        case 4:
+	        case 5:
 	        {
 	        	System.out.println("◙◙◙ ◙◙◙ ◙◙◙ ◙◙◙ ");
 	    		System.out.println("    Aurevoir   \n");
