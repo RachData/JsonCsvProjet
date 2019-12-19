@@ -17,11 +17,9 @@ public class Main
 	
 	/**
 	 * Fonction principale du projet : c'est la fonction d'entre du projet
-	 * @param args
+	 * @param args : parametre par defaut
 	 * @throws SaisiesExceptions :gere les exceptions lies aux erreurs de saisie
 	 * @throws CheminsExceptions : Il resout l'exception qui survient si le chemin n'est pas valide
-	 * @throws JsonMappingException :Il resout l'exception si le mapping ne se pas bien
-	 * @throws IOException :Il resout l'exception qui survient pour la gestion des fichiers
 	 */
 
 	public static void main(String[] args) throws SaisiesExceptions,CheminsExceptions, IOException
