@@ -5,6 +5,6 @@ public class SaisiesExceptions extends Exception
 	
 	public SaisiesExceptions()
 	{
-		System.out.println("Erreur de saisie test de surerter...");	
+		System.out.println("Erreur de saisie ...");	
 	}
 }

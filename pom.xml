@@ -19,7 +19,6 @@
   <properties>
   
   <!-- Encodage UTF-8  -->
-  
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     
     <!-- Projet compile avec java dans sa version 1.8-->
@@ -28,11 +27,10 @@
     
     <maven.compiler.target>1.8</maven.compiler.target>
     
- 
-
-      <javadoc.opts>-Xdoclint:none</javadoc.opts>
+ 	<javadoc.opts>-Xdoclint:none</javadoc.opts>
   
 </properties>
+
 
 
   <dependencies>
@@ -41,6 +39,7 @@
   <dependency>
   <!-- Insertion de la dependance findbug -->
   <!-- Utilisons findBugs qui permet de rechercher des bugs dans les programmes Java. Il est basé sur le concept de modèles de bugs -->
+
 <!-- https://mvnrepository.com/artifact/org.codehaus.mojo/findbugs-maven-plugin -->
 	
   

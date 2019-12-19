@@ -7,6 +7,6 @@ public class CheminsExceptions extends Exception
 	 */
 	public CheminsExceptions()
 	{
-		System.out.println("\nLe Fichier specifié n'existe pas\n");
+		System.out.println("\nLe Fichier specifier n'existe pas\n");
 	}
 }

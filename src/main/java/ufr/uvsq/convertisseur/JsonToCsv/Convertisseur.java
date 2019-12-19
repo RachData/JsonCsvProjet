@@ -44,7 +44,8 @@ public class Convertisseur
 	 */
 	
 
-	  public void to_csv ( String chemin) throws CheminsExceptions,FichiersVide, JsonGenerationException, JsonMappingException, IOException
+
+	  public void to_csv (String chemin) throws CheminsExceptions,FichiersVide//, JsonGenerationException, JsonMappingException, IOException
 
 
 	{
@@ -100,6 +101,9 @@ public class Convertisseur
 		  }
 	}
 	  
+	  
+	  
+	  
 	  /**
 	   * Cette methode permet de passer d'un fichier csv à un fichier json
 	   * @param chemin : il represente le chemin absolu du fichier csv a convertir
@@ -110,7 +114,9 @@ public class Convertisseur
 	public void to_json(String chemin) throws CheminsExceptions,FichiersVide
 	{
 		//Verification de l'existance du fichier
+
 		//String chemin=csv_Path();
+
 		File Fichier=new File(chemin);
 		  
 		  if(Fichier.exists()==false)
@@ -129,7 +135,7 @@ public class Convertisseur
 			  else
 			  
 			  {
-		
+
 				  try
 				  {
 			  			CsvSchema monSchema_Csv = CsvSchema.emptySchema().withHeader();
@@ -140,19 +146,21 @@ public class Convertisseur
 			  					.with(monSchema_Csv)
 			  					.readValues(new File(chemin));
 			  			new ObjectMapper()
-			  			.configure(SerializationFeature.INDENT_OUTPUT, true)
-			  			.writeValue(new File("src\\main\\Ressources\\Csv_to_Json\\jsonFromCsv.json"), Structure.readAll());
+
+			  				.configure(SerializationFeature.INDENT_OUTPUT, true)
+			  				.writeValue(new File("src\\main\\Ressources\\Csv_to_Json\\jsonFromCsv.json"), Structure.readAll());
 			  		}
 				  
 			  		catch (Exception e)
 				  
 			  		{
-			  			e.printStackTrace();
+
+			  			
 			  		}
 			  }
 		  }
 	}
-	
+
 			/**
 			 * 
 			 * @return
@@ -212,7 +220,6 @@ public class Convertisseur
 		  }
 		  
 		  
-
 			    public  void openFile() throws IOException
 			    {
 
@@ -231,6 +238,7 @@ public class Convertisseur
 			        }
 			        
 			    }
+
 
 	}
 		 
