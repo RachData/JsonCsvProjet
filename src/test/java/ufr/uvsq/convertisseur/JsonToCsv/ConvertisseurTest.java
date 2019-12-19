@@ -40,13 +40,13 @@ public class ConvertisseurTest {
 	@Before
 	  public void setup() {
 		chemin1CSV="yggkjh";//erreur de syntaxe
-		chemin2CSV="‪C:\\Users\\utilisateur\\Documents\\Java\\convertisseur\\JsonCsvProjet\\src\\main\\Ressources\\Json_to_Csv\\Fichier_json.json";//fichier existant
-		chemin3CSV="C:\\Users\\utilisateur\\Documents\\Java\\convertisseur\\JsonCsvProjet\\src\\main\\Ressources\\Json_to_Csv\\VideJson.json";//fichier exiatnt mais vide
+		chemin2CSV="‪src\\main\\Ressources\\Json_to_Csv\\Fichier_json.json";//fichier existant
+		chemin3CSV="src\\main\\Ressources\\Json_to_Csv\\VideJson.json";//fichier exiatnt mais vide
 		chemin4CSV=null;//syntaxe null vide
 		
 		chemin1JSON="yggkjh";//erreur de syntaxe
-		chemin2JSON="‪C:\\Users\\utilisateur\\Documents\\Java\\convertisseur\\JsonCsvProjet\\src\\main\\Ressources\\Csv_to_Json\\FichierCsv.json";//fichier existant
-		chemin3JSON="C:\\Users\\utilisateur\\Documents\\Java\\convertisseur\\JsonCsvProjet\\src\\main\\Ressources\\Csv_to_Json\\Vide_Csv.json";//fichier exiatnt mais vide
+		chemin2JSON="src\\main\\Ressources\\Csv_to_Json\\FichierCsv.json";//fichier existant
+		chemin3JSON="src\\main\\Ressources\\Csv_to_Json\\Vide_Csv.json";//fichier exiatnt mais vide
 		chemin4JSON=null;//syntaxe null vide
 		
 		convertir =new Convertisseur();
@@ -55,8 +55,10 @@ public class ConvertisseurTest {
 	 @Test()
 	public void erreurSyntaxetestTOCSV() throws CheminsExceptions, FichiersVide {
 		 try {
-				 convertir.to_csv(chemin1CSV);
-				 
+
+			 
+				 convertir.to_csv(chemin1CSV);;
+
 			 }catch(Exception es) {
 				 
 			 }

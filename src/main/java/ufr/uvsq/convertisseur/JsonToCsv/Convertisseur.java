@@ -1,8 +1,11 @@
 package ufr.uvsq.convertisseur.JsonToCsv;
 
+import java.awt.Desktop;
 import java.io.File;
-
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -41,12 +44,14 @@ public class Convertisseur
 	 */
 	
 
-	  public void to_csv (String chemin) throws CheminsExceptions,FichiersVide//, JsonGenerationException, JsonMappingException, IOException
 
+	  public void to_csv (String chemin) throws CheminsExceptions,FichiersVide//, JsonGenerationException, JsonMappingException, IOException
 
 
 	{
 		  //Verification de l'existance du fichier
+		  
+		 //String chemin=json_Path();
 		  
 		  File Fichier=new File(chemin);
 		  
@@ -109,7 +114,9 @@ public class Convertisseur
 	public void to_json(String chemin) throws CheminsExceptions,FichiersVide
 	{
 		//Verification de l'existance du fichier
-		 
+
+		//String chemin=csv_Path();
+
 		File Fichier=new File(chemin);
 		  
 		  if(Fichier.exists()==false)
@@ -128,6 +135,7 @@ public class Convertisseur
 			  else
 			  
 			  {
+
 				  try
 				  {
 			  			CsvSchema monSchema_Csv = CsvSchema.emptySchema().withHeader();
@@ -146,11 +154,91 @@ public class Convertisseur
 			  		catch (Exception e)
 				  
 			  		{
+
 			  			
-			  		};
+			  		}
 			  }
 		  }
 	}
 
-}			  			
+			/**
+			 * 
+			 * @return
+			 */
+		  public String json_Path()
+		  {
+			  String path="";
+			  
+			  try
+			  {
+			  
+					 InputStream myfile =new FileInputStream("src/main/Ressources/Mesconfig.properties") ;
+					 if(myfile != null)
+					 {
+						 Properties prop =new Properties();
+						 prop.load(myfile);
+						path= prop.getProperty("json_Path");
+					 }	  
+			  }
+			  
+			  catch(Exception e)
+			  {
+				  e.printStackTrace();
+			  }
+			  
+			  return path;
+		  }
+		  
+		  
+		  /**
+		   * 
+		   * @return
+		   */
+		  public String csv_Path()
+		  
+		  {
+			  String path="";
+			  
+			  try
+			  {
+			  
+					 InputStream myfile =new FileInputStream("src/main/Ressources/Mesconfig.properties") ;
+					 if(myfile != null)
+					 {
+						 Properties prop =new Properties();
+						 prop.load(myfile);
+						path= prop.getProperty("csv_Path");
+					 }	  
+			  }
+			  
+			  catch(Exception e)
+			  {
+				  e.printStackTrace();
+			  }
+			  
+			  return path;
+		  }
+		  
+		  
+			    public  void openFile() throws IOException
+			    {
 
+			       File myfile =new File("src\\main\\Ressources\\Mesconfig.properties") ;
+			      
+			        if(!Desktop.isDesktopSupported()){
+			            System.out.println("Votre fichier ne peut etre ouvert");
+			            return;
+			        }
+			        
+			        Desktop desktop = Desktop.getDesktop();
+			        if(myfile.exists()) 
+			        {
+			        	System.out.println("test");
+			        	desktop.edit(myfile);
+			        }
+			        
+			    }
+
+
+	}
+		 
