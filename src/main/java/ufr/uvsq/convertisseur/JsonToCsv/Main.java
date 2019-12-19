@@ -127,9 +127,9 @@ public class Main
 	            break;
 	        case 5:
 	        {
-	        	System.out.println("◙◙◙ ◙◙◙ ◙◙◙ ◙◙◙ ");
+	        	System.out.println(">>>> *********>>>> ");
 	    		System.out.println("    Aurevoir   \n");
-	    		System.out.println("◙◙◙ ◙◙◙ ◙◙◙ ◙◙◙ ");
+	    		System.out.println(">>>> *********>>>> ");
 	            System.exit(0);
 	        }
 	        /*default:

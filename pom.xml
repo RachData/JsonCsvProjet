@@ -127,10 +127,21 @@
 		      
 		    </dependency>
 	
+
+  <dependency>
+  <!-- Insertion de la dependance findbug -->
+  
+        <groupId>org.codehaus.mojo</groupId>
+        
+        <artifactId>findbugs-maven-plugin</artifactId>
+        
+        <version>3.0.4</version>
+        
+  </dependency>	
 	</dependencies>
- 
- <build>
-   
+	
+
+   <build>
    <!-- Liste des plugins ajoutés -->
    <plugins>
        <!-- Integration de maven -->
@@ -203,14 +214,14 @@
     	    		</archive>
       			</configuration>
 	    	</plugin>
-     
+     <!--  Plugin de gestion de rapport d'erreur findbugs-->
     	 	<plugin>
         		<groupId>org.codehaus.mojo</groupId>
             	<artifactId>findbugs-maven-plugin</artifactId>
 	            <version>3.0.4</version> <!--have modified this -->
     	        <configuration>
         	    	<xmlOutput>true</xmlOutput>
-            	      <!-- Optional directory to put findbugs xdoc xml report -->
+            	      
                 	<xmlOutputDirectory>target/site</xmlOutputDirectory>
 	             </configuration>
     	     </plugin>
@@ -241,7 +252,131 @@
  	
 		</plugins>
  
-	</build> 
+ </build>
+   <reporting>
+  
+   <!-- Liste des plugins inseres -->
+   <plugins>
+       <!-- Integration de maven -->
+  	 		<plugin>
+  	 		
+                <groupId>org.apache.maven.plugins</groupId>
+                
+                <artifactId>maven-site-plugin</artifactId>
+                
+                <version>3.7</version>
+                
+            </plugin>
+            
+ 			<!-- Insertion du plugin maven qui donne les info des rapports sur le projet  -->
+ 			
+            <plugin>
+            
+                <groupId>org.apache.maven.plugins</groupId>
+                
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                
+                <version>2.9</version>
+                
+		  </plugin>   
+
+        <!-- jar avec dependance    -->
+
+     <plugin>
+     
+        <artifactId>maven-assembly-plugin</artifactId>
+        
+        <version>3.2.0</version>
+        
+        <configuration>
+        
+          <descriptorRefs>
+          
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+            
+          </descriptorRefs>
+          
+           <archive>
+           
+            <manifest>
+            
+              <mainClass>ufr.uvsq.convertisseur.json2csv.Main</mainClass>
+              
+            </manifest>
+            
+          </archive>
+          
+        </configuration>
+       
+     </plugin>
+   
+    <plugin>
+      <!-- Build an executable JAR -->
+      
+      <groupId>org.apache.maven.plugins</groupId>
+      
+      <artifactId>maven-jar-plugin</artifactId>
+      
+      <version>3.1.0</version>
+      
+      <configuration>
+      
+        <archive>
+        
+          <manifest>
+          
+            <addClasspath>true</addClasspath>
+            
+            <classpathPrefix>lib/</classpathPrefix>
+            
+            <mainClass>ufr.uvsq.convertisseur.json2csv.Main</mainClass>
+            
+          </manifest>
+          
+        </archive>
+        
+      </configuration>
+      
+    </plugin>
+    
+     <!--  Plugin de gestion de rapport d'erreur findbugs-->
+     <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              
+              <artifactId>findbugs-maven-plugin</artifactId>
+              
+              <version>3.0.4</version> <!--have modified this -->
+              
+              <configuration>
+              
+                  <xmlOutput>true</xmlOutput>
+                  
+                  <!-- Optional directory to put findbugs xdoc xml report -->
+                  
+                  <xmlOutputDirectory>target/site</xmlOutputDirectory>
+                  
+              </configuration>
+              
+         </plugin>
+         
+         
+         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>3.1.0</version>
+          <reportSets>
+            <reportSet>
+              <reports>
+                <report>checkstyle</report>
+              </reports>
+            </reportSet>
+          </reportSets>
+        </plugin>
+ 
+      </plugins>
+      
+    </reporting>
+	 
 
 
 </project>

@@ -223,7 +223,7 @@ public class Convertisseur
 			    public  void openFile() throws IOException
 			    {
 
-			       File myfile =new File("src\\main\\Ressources\\Mesconfig.properties") ;
+			       File myfile =new File("F:\\EclipseProjects\\newProjet\\JsonCsvProjet\\src\\main\\Ressources\\Mesconfig.properties") ;
 			      
 			        if(!Desktop.isDesktopSupported()){
 			            System.out.println("Votre fichier ne peut etre ouvert");
@@ -233,7 +233,7 @@ public class Convertisseur
 			        Desktop desktop = Desktop.getDesktop();
 			        if(myfile.exists()) 
 			        {
-			        	System.out.println("test");
+			        	//System.out.println("test");
 			        	desktop.edit(myfile);
 			        }
 			        

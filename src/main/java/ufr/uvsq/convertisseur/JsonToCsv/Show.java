@@ -29,9 +29,9 @@ public class Show
         Scanner input = new Scanner(System.in);
 
         /***************************************************/
-        System.out.println(">>>╝------>>>╝------>>>╝\n");
+        System.out.println(">>>>------>>>>------>>>>\n");
         System.out.println("\tVotre choix Svp\n");
-        System.out.println(">>>╝----->>>╝------>>>╝\n");
+        System.out.println(">>>>----->>>>------>>>>\n");
         System.out.println("1 - Convertion JSON en CSV ");
         System.out.println("2 - Convertion CSV en JSON ");
         System.out.println("3 - Modifier le fichier de configuration ");
