@@ -41,7 +41,7 @@ Les étapes pour executer votre programme....
 
  -Quitter (Tapez 5)
 
--Dans un premier temps vous devrez renseigner le chemin de votre fichier json a convertir pour cela vous devriez tapez 
+-Dans un premier temps vous devrez renseigner le chemin de votre fichier json a convertir pour cela vous devriez tapez 1
 
 -Convertion JSON en CSV (Tapez 1)
 
@@ -57,7 +57,7 @@ Les étapes pour executer votre programme....
 
  -Quitter (Tapez 5)
 
-
+1
 
 Entrez le chemin absolu du fichier JSON
 
