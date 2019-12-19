@@ -47,7 +47,6 @@ public class Convertisseur
 
 	  public void to_csv (String chemin) throws CheminsExceptions,FichiersVide//, JsonGenerationException, JsonMappingException, IOException
 
-
 	{
 		  //Verification de l'existance du fichier
 		  
